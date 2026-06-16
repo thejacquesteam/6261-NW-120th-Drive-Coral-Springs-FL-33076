@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6261 NW 120th Drive | Coral Springs, FL</title>
+  <meta name="description" content="Luxury single-property landing page for 6261 NW 120th Drive, Coral Springs, FL 33076." />
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --bg-soft:#121214;
+      --bg-card:#141416;
+      --text:#f5f2eb;
+      --muted:#b6b0a5;
+      --line:rgba(255,255,255,.10);
+      --gold:#c8a46a;
+      --gold-2:#d6b57f;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --max:1200px;
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .nav{
+      position:sticky; top:0; z-index:1000;
+      background:rgba(10,10,11,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; letter-spacing:.18em; text-transform:uppercase;
+      font-size:.8rem; color:var(--text);
+    }
+    .brand-mark{
+      width:34px; height:34px; border:1px solid var(--line); border-radius:999px;
+      display:grid; place-items:center; color:var(--gold); font-weight:700;
+      background:rgba(255,255,255,.03);
+    }
+    .nav-links{display:flex; gap:26px; flex-wrap:wrap; justify-content:flex-end}
+    .nav-links a{
+      font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,242,235,.82);
+      transition:color .25s ease, opacity .25s ease;
+    }
+    .nav-links a:hover{color:var(--gold-2)}
+    .hero{
+      position:relative;
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(90deg, rgba(11,11,12,.92) 0%, rgba(11,11,12,.78) 44%, rgba(11,11,12,.22) 100%),
+        linear-gradient(180deg, rgba(11,11,12,.18) 0%, rgba(11,11,12,.62) 100%),
+        url('hero.jpg') center/cover no-repeat;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:radial-gradient(circle at 20% 20%, rgba(200,164,106,.12), transparent 28%),
+                 radial-gradient(circle at 80% 10%, rgba(255,255,255,.05), transparent 18%);
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      padding:90px 0 42px;
+      width:100%;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:12px;
+      color:rgba(245,242,235,.7);
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-size:.72rem;
+      margin-bottom:18px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:36px; height:1px; background:rgba(200,164,106,.75);
+    }
+    .price{
+      color:var(--gold-2);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style:italic;
+      font-size:1.1rem;
+      margin-bottom:12px;
+    }
+    h1{
+      margin:0;
+      max-width:760px;
+      font-size:clamp(3rem, 7vw, 6.5rem);
+      line-height:.94;
+      letter-spacing:-.04em;
+      text-wrap:balance;
+    }
+    .subhead{
+      margin-top:22px;
+      max-width:640px;
+      color:rgba(245,242,235,.82);
+      font-size:1.05rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:34px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:52px; padding:0 22px;
+      border-radius:999px; border:1px solid var(--line);
+      text-transform:uppercase; letter-spacing:.15em; font-size:.78rem;
+      transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#1a140d; border-color:transparent;
+      box-shadow:0 10px 30px rgba(200,164,106,.22);
+    }
+    .btn.secondary{background:rgba(255,255,255,.02); color:var(--text)}
+    .btn.secondary:hover{border-color:rgba(214,181,127,.55); color:var(--gold-2)}
+    .hero-meta{
+      margin-top:28px;
+      display:flex; gap:22px; flex-wrap:wrap;
+      color:rgba(245,242,235,.62);
+      font-size:.78rem; letter-spacing:.22em; text-transform:uppercase;
+    }
+    .stats{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:0;
+    }
+    .stat{
+      padding:26px 18px;
+      text-align:center;
+      border-right:1px solid var(--line);
+    }
+    .stat:last-child{border-right:none}
+    .stat strong{display:block; font-size:1.35rem; font-weight:500; letter-spacing:-.02em}
+    .stat span{
+      display:block; margin-top:8px; color:var(--muted);
+      font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    }
+    section{padding:92px 0}
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:30px;
+    }
+    .kicker{
+      color:var(--gold-2);
+      letter-spacing:.24em; text-transform:uppercase; font-size:.74rem; margin-bottom:12px;
+    }
+    h2{
+      margin:0; font-size:clamp(2rem, 4vw, 3.1rem); line-height:1.02; letter-spacing:-.03em;
+    }
+    .lead{
+      max-width:660px; color:var(--muted); font-size:1.04rem;
+    }
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .overview{
+      padding:34px;
+    }
+    .overview p{margin:0; color:rgba(245,242,235,.84); font-size:1.05rem; max-width:980px}
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:14px;
+    }
+    .photo{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      min-height:240px;
+      background:#19191c;
+      border:1px solid var(--line);
+    }
+    .photo.big{grid-row:span 2; min-height:494px}
+    .photo img{
+      width:100%; height:100%; object-fit:cover;
+      transition:transform .5s ease;
+    }
+    .photo:hover img{transform:scale(1.03)}
+    .photo::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.16));
+      pointer-events:none;
+    }
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .feature{
+      padding:22px;
+      border-radius:20px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      transition:transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .feature:hover{transform:translateY(-2px); border-color:rgba(214,181,127,.35); background:rgba(255,255,255,.045)}
+    .feature h3{margin:0 0 8px; font-size:1rem; letter-spacing:-.01em}
+    .feature p{margin:0; color:var(--muted); font-size:.96rem}
+    .location-wrap,.faq-wrap,.inquire-wrap{padding:34px}
+    .location-copy{max-width:940px; color:rgba(245,242,235,.84); font-size:1.04rem}
+    .faq{display:grid; gap:12px; margin-top:16px}
+    details{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:500;
+      letter-spacing:-.01em;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:12px 0 0; color:var(--muted)}
+    .inquire-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .form{
+      display:grid;
+      gap:14px;
+    }
+    .field{
+      display:grid;
+      gap:8px;
+    }
+    label{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,242,235,.72)}
+    input, textarea{
+      width:100%;
+      background:#0f0f11;
+      border:1px solid var(--line);
+      color:var(--text);
+      border-radius:16px;
+      padding:14px 16px;
+      font:inherit;
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color:rgba(214,181,127,.55); box-shadow:0 0 0 3px rgba(200,164,106,.12)}
+    textarea{min-height:130px; resize:vertical}
+    .contact-box{
+      padding:24px;
+      border-radius:20px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      display:grid;
+      align-content:start;
+      gap:14px;
+    }
+    .contact-box a{color:var(--gold-2)}
+    .fine{color:var(--muted); font-size:.94rem}
+    footer{
+      padding:36px 0 60px;
+      color:rgba(245,242,235,.5);
+      border-top:1px solid var(--line);
+      font-size:.9rem;
+    }
+    .mobile-nav-toggle{display:none}
+    @media (max-width: 980px){
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat:nth-child(2n){border-right:none}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .photo.big{grid-column:1 / -1; min-height:380px}
+      .features{grid-template-columns:1fr 1fr}
+      .inquire-grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .nav-inner{align-items:flex-start; padding:14px 0; flex-direction:column}
+      .nav-links{gap:16px}
+      .hero{min-height:auto}
+      .hero-inner{padding:80px 0 36px}
+      .subhead{font-size:.92rem}
+      .stats-grid{grid-template-columns:1fr}
+      .stat{border-right:none; border-bottom:1px solid var(--line)}
+      .stat:last-child{border-bottom:none}
+      section{padding:72px 0}
+      .section-head{flex-direction:column; align-items:flex-start}
+      .gallery-grid,.features{grid-template-columns:1fr}
+      .photo.big{min-height:300px}
+      .overview,.location-wrap,.faq-wrap,.inquire-wrap{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-mark">J</div>
+        <div>The Jacques Real Estate Team</div>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#features">Features</a>
+        <a href="#location">Location</a>
+        <a href="#faq">FAQ</a>
+        <a href="#inquire">Inquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow">Exclusive listing · Coral Springs</div>
+        <div class="price">Offered at $1,750,000</div>
+        <h1>A One-Story Custom Estate in Heron Bay</h1>
+        <div class="subhead">6261 NW 120th Drive · Coral Springs, FL 33076</div>
+        <div class="cta-row">
+          <a class="btn primary" href="#overview">Explore the Residence</a>
+          <a class="btn secondary" href="#inquire">Schedule Private Tour</a>
+        </div>
+        <div class="hero-meta">
+          <span>The Falls at Heron Bay</span>
+          <span>Double-Gated Enclave</span>
+          <span>Private Pool & Preserve Views</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>5</strong><span>Bedrooms</span></div>
+        <div class="stat"><strong>4 Full / 2 Half</strong><span>Bathrooms</span></div>
+        <div class="stat"><strong>4,052</strong><span>Sq Ft</span></div>
+        <div class="stat"><strong>1998</strong><span>Built</span></div>
+        <div class="stat"><strong>3-Car</strong><span>Garage</span></div>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Overview</div>
+            <h2>Elegant scale, timeless finishes, and a private South Florida setting.</h2>
+          </div>
+          <div class="lead">Set inside The Falls at Heron Bay, this custom one-story residence pairs generous interiors with resort-style outdoor living and a peaceful preserve backdrop.</div>
+        </div>
+        <div class="panel overview">
+          <p>
+            6261 NW 120th Drive offers 4,052 square feet of refined living space in one of Coral Springs’ most sought-after gated communities. The home features 5 bedrooms, 4 full bathrooms, 2 half bathrooms, expansive marble interiors, and a layout designed for comfort, hosting, and everyday ease. A designer chef’s kitchen connects beautifully with the main living spaces, while the private backyard creates a true retreat with a pool, covered outdoor areas, and views that feel calm and open. With a newer roof from October 2022, a 3-car garage, and a double-gated Heron Bay setting, this residence brings together privacy, function, and polished South Florida living.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Gallery</div>
+            <h2>Grand curb appeal, bright interiors, and a backyard made for slowing down.</h2>
+          </div>
+          <div class="lead">A curated look at the home’s architectural details, elegant living areas, and private outdoor spaces.</div>
+        </div>
+        <div class="gallery-grid">
+          <div class="photo big">
+            <img src="hero.jpg" alt="6261 NW 120th Drive hero property image" />
+          </div>
+          <div class="photo">
+            <img src="gallery-2.jpg" alt="6261 NW 120th Drive property photo 2" />
+          </div>
+          <div class="photo">
+            <img src="gallery-3.jpg" alt="6261 NW 120th Drive property photo 3" />
+          </div>
+          <div class="photo">
+            <img src="gallery-4.jpg" alt="6261 NW 120th Drive property photo 4" />
+          </div>
+          <div class="photo">
+            <img src="gallery-5.jpg" alt="6261 NW 120th Drive property photo 5" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Features</div>
+            <h2>Designed for privacy, comfort, and elevated everyday living.</h2>
+          </div>
+          <div class="lead">From the double-gated setting to the poolside backyard, every detail supports a polished and relaxed South Florida lifestyle.</div>
+        </div>
+        <div class="features">
+          <div class="feature"><h3>One-story custom residence</h3><p>Single-level living with generous spaces and an elegant sense of flow.</p></div>
+          <div class="feature"><h3>The Falls at Heron Bay</h3><p>Located in an exclusive double-gated enclave within Heron Bay.</p></div>
+          <div class="feature"><h3>5 bedrooms</h3><p>Flexible room count for family, guests, work, wellness, or hobby space.</p></div>
+          <div class="feature"><h3>4 full and 2 half bathrooms</h3><p>Well-planned bath layout for daily comfort and easy entertaining.</p></div>
+          <div class="feature"><h3>4,052 square feet</h3><p>Spacious interior living with room to gather, relax, and spread out.</p></div>
+          <div class="feature"><h3>Designer chef’s kitchen</h3><p>A refined kitchen space designed for cooking, hosting, and connection.</p></div>
+          <div class="feature"><h3>Expansive marble interiors</h3><p>Elegant materials create a polished and timeless feel throughout the home.</p></div>
+          <div class="feature"><h3>Private backyard retreat</h3><p>Outdoor space designed for poolside relaxation and peaceful views.</p></div>
+          <div class="feature"><h3>Private swimming pool</h3><p>A resort-style feature that makes the backyard feel like a daily escape.</p></div>
+          <div class="feature"><h3>Preserve and sunset views</h3><p>A calm natural backdrop with beautiful western light in the evenings.</p></div>
+          <div class="feature"><h3>Newer roof</h3><p>Roof updated in October 2022 for added value and peace of mind.</p></div>
+          <div class="feature"><h3>3-car garage</h3><p>Extra room for vehicles, storage, and everyday flexibility.</p></div>
+          <div class="feature"><h3>Owner’s retreat</h3><p>A spacious private suite designed as a restful escape within the home.</p></div>
+          <div class="feature"><h3>Resort-style community</h3><p>Heron Bay offers a residential setting known for comfort, privacy, and amenities.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Location</div>
+            <h2>Coral Springs living with Heron Bay privacy and Parkland-area convenience.</h2>
+          </div>
+          <div class="lead">A gated community setting with access to everyday essentials, schools, parks, shopping, dining, and major routes.</div>
+        </div>
+        <div class="panel location-wrap">
+          <p class="location-copy">
+            Located in the Heron Bay neighborhood of Coral Springs, 6261 NW 120th Drive offers a private residential feel while keeping daily needs within reach. The Falls at Heron Bay is known for its gated setting, mature neighborhood feel, and convenient access to nearby shopping, dining, golf, parks, and major roadways. The location also places the home near well-known area schools including Park Trails Elementary, Westglades Middle, and Marjory Stoneman Douglas High School.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">FAQ</div>
+            <h2>Helpful details for prospective buyers.</h2>
+          </div>
+          <div class="lead">Quick answers to common questions about the home, community, and private showing options.</div>
+        </div>
+        <div class="panel faq-wrap">
+          <div class="faq">
+            <details>
+              <summary>Where is 6261 NW 120th Drive located?</summary>
+              <p>It is located in Coral Springs, Florida, inside The Falls at Heron Bay.</p>
+            </details>
+            <details>
+              <summary>How many bedrooms and bathrooms does the home have?</summary>
+              <p>The home has 5 bedrooms, 4 full bathrooms, and 2 half bathrooms.</p>
+            </details>
+            <details>
+              <summary>How large is the home?</summary>
+              <p>The residence offers 4,052 square feet of living space.</p>
+            </details>
+            <details>
+              <summary>Does the home have a pool?</summary>
+              <p>Yes. The property features a private swimming pool and a backyard designed for outdoor living.</p>
+            </details>
+            <details>
+              <summary>What community is the home located in?</summary>
+              <p>The home is located in The Falls, a double-gated enclave within Heron Bay.</p>
+            </details>
+            <details>
+              <summary>How do I schedule a private showing?</summary>
+              <p>Use the inquiry form below or contact The Jacques Real Estate Team directly by email or phone.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inquire">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Inquire</div>
+            <h2>Request pricing details, private showing options, or additional property information.</h2>
+          </div>
+          <div class="lead">Connect with The Jacques Real Estate Team for private showing options and additional property details.</div>
+        </div>
+        <div class="panel inquire-wrap">
+          <div class="inquire-grid">
+            <form class="form" action="https://formspree.io/f/xojzpaeq" method="POST">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us what you'd like to know about 6261 NW 120th Drive."></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="New inquiry for 6261 NW 120th Drive" />
+              <input type="hidden" name="source" value="6261 NW 120th Drive Landing Page" />
+              <input type="hidden" name="property" value="6261 NW 120th Drive, Coral Springs, FL 33076" />
+              <input type="hidden" name="lead_type" value="Property Inquiry" />
+              <button class="btn primary" type="submit">Send Inquiry</button>
+            </form>
+            <div class="contact-box">
+              <div class="kicker">The Jacques Real Estate Team</div>
+              <div><a href="mailto:info@jacquesrealty.com">info@jacquesrealty.com</a></div>
+              <div><a href="tel:+15616785584">(561) 678-5584</a></div>
+              <div class="fine">Interested in 6261 NW 120th Drive? Request pricing details, private showing options, or additional property information.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Jacques Real Estate Team. 6261 NW 120th Drive, Coral Springs, FL 33076.</div>
+  </footer>
+</body>
+</html>

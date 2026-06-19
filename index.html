@@ -121,6 +121,7 @@
       border-radius:999px; border:1px solid var(--line);
       text-transform:uppercase; letter-spacing:.15em; font-size:.78rem;
       transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      cursor:pointer;
     }
     .btn:hover{transform:translateY(-1px)}
     .btn.primary{
@@ -181,6 +182,24 @@
       padding:34px;
     }
     .overview p{margin:0; color:rgba(245,242,235,.84); font-size:1.05rem; max-width:980px}
+
+    .video-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:16 / 9;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#111;
+    }
+
+    .video-wrap iframe{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
     .gallery-grid{
       display:grid;
       grid-template-columns:2fr 1fr 1fr;
@@ -316,6 +335,7 @@
       </div>
       <nav class="nav-links" aria-label="Primary">
         <a href="#overview">Overview</a>
+        <a href="#video">Video</a>
         <a href="#gallery">Gallery</a>
         <a href="#features">Features</a>
         <a href="#location">Location</a>
@@ -367,6 +387,29 @@
           <p>
             6261 NW 120th Drive offers 4,052 square feet of refined living space in one of Coral Springs’ most sought-after gated communities. The home features 5 bedrooms, 4 full bathrooms, 2 half bathrooms, expansive marble interiors, and a layout designed for comfort, hosting, and everyday ease. A designer chef’s kitchen connects beautifully with the main living spaces, while the private backyard creates a true retreat with a pool, covered outdoor areas, and views that feel calm and open. With a newer roof from October 2022, a 3-car garage, and a double-gated Heron Bay setting, this residence brings together privacy, function, and polished South Florida living.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Video Tour</div>
+            <h2>Experience 6261 NW 120th Drive in motion.</h2>
+          </div>
+          <div class="lead">A closer look at the home’s one-story layout, elegant interiors, private pool, and preserve setting.</div>
+        </div>
+
+        <div class="video-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/SDNI1Otfpzg?si=MRGgktGTCI8WTnTo"
+            title="6261 NW 120th Drive Video Tour"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
